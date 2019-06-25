@@ -21,7 +21,7 @@ class MechaDog < Dog
   end
 
   def proc arg
-    path = (arg.split[0]).split('/')[1..-1]
+    path = (arg.split[1]).split('/')[1..-1]
     if path.nil?
       keys=[]
       @data.each do |key, _value|
@@ -36,11 +36,12 @@ class MechaDog < Dog
     end
   end
 
+
 end
 
 
 mdog = MechaDog.new('tom')
 mdog.bark
-p mdog.age
 p mdog.name
+p mdog.age
 mdog.proc "GET /bsd HTTP/1.1"
